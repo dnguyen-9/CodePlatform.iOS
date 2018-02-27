@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{EF2C2780-11E8-4DE5-9020-1FD3F90246C5}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CodePlatform</RootNamespace>
+    <AssemblyName>CodePlatform</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>19325</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>19697</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="QuickStartVC\" />
+    <Folder Include="Tabs\" />
+    <Folder Include="Resources\icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="WelcomeScreenVC.cs" />
+    <Compile Include="WelcomeScreenVC.designer.cs">
+      <DependentUpon>WelcomeScreenVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuickStartVC\QuickStartJavaVC.cs" />
+    <Compile Include="QuickStartVC\QuickStartJavaVC.designer.cs">
+      <DependentUpon>QuickStartJavaVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuickStartVC\QuickStartCppVC.cs" />
+    <Compile Include="QuickStartVC\QuickStartCppVC.designer.cs">
+      <DependentUpon>QuickStartCppVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuickStartVC\QuickStartCSharpVC.cs" />
+    <Compile Include="QuickStartVC\QuickStartCSharpVC.designer.cs">
+      <DependentUpon>QuickStartCSharpVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuickStartVC\QuickStartMenuManagerVC.cs" />
+    <Compile Include="QuickStartVC\QuickStartMenuManagerVC.designer.cs">
+      <DependentUpon>QuickStartMenuManagerVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuickStartVC\QuickStartPythonManagerVC.cs" />
+    <Compile Include="QuickStartVC\QuickStartPythonManagerVC.designer.cs">
+      <DependentUpon>QuickStartPythonManagerVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuickStartVC\QuickStartMenuStudentDevVC.cs" />
+    <Compile Include="QuickStartVC\QuickStartMenuStudentDevVC.designer.cs">
+      <DependentUpon>QuickStartMenuStudentDevVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuickStartVC\QuickStartMenuLearnerVC.cs" />
+    <Compile Include="QuickStartVC\QuickStartMenuLearnerVC.designer.cs">
+      <DependentUpon>QuickStartMenuLearnerVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuickStartVC\QuickStartPythonLearnerVC.cs" />
+    <Compile Include="QuickStartVC\QuickStartPythonLearnerVC.designer.cs">
+      <DependentUpon>QuickStartPythonLearnerVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuickStartVC\QuickStartPythonStudentDeveloperVC.cs" />
+    <Compile Include="QuickStartVC\QuickStartPythonStudentDeveloperVC.designer.cs">
+      <DependentUpon>QuickStartPythonStudentDeveloperVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuickStartVC\QuickStartCompleteVC.cs" />
+    <Compile Include="QuickStartVC\QuickStartCompleteVC.designer.cs">
+      <DependentUpon>QuickStartCompleteVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\BattleVC.cs" />
+    <Compile Include="Tabs\BattleVC.designer.cs">
+      <DependentUpon>BattleVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\HomeVC.cs" />
+    <Compile Include="Tabs\HomeVC.designer.cs">
+      <DependentUpon>HomeVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\SettingsVC.cs" />
+    <Compile Include="Tabs\SettingsVC.designer.cs">
+      <DependentUpon>SettingsVC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\ProfileVC.cs" />
+    <Compile Include="Tabs\ProfileVC.designer.cs">
+      <DependentUpon>ProfileVC.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icons\circle-user-7.png" />
+    <BundleResource Include="Resources\icons\gear-7.png" />
+    <BundleResource Include="Resources\icons\home-7.png" />
+    <BundleResource Include="Resources\icons\leaning-tower-7.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>
